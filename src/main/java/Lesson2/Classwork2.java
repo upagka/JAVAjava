@@ -13,6 +13,45 @@ public class Classwork2 {
 // postWhile(choice);
 // forLoop(choice);
 
+        int a1 = 15;
+        int a2 = 56;
+        int a3 = 625;
+        int a4 = -254;
+        int a5 = 36;
+        int a6 = 1274;
+        int a7 = 98;
+        int a8 = 76;
+
+    int[] intArray = new int[8];
+    intArray[0] = a1;
+    intArray[1] = a2;
+    intArray[2] = a3;
+    intArray[3] = a4;
+    intArray[4] = a5;
+    intArray[5] = a6;
+    intArray[6] = a7;
+    intArray[7] = a8;
+//    intArray[8] = a1;
+
+    System.out.println(intArray[3]);
+    intArray[0] = intArray[5] + intArray[6];
+    System.out.println(intArray[0]);
+
+    String[] strings = new String[3];
+    strings[0] = "Hello ";
+    strings[1] = "world ";
+    strings[2] = "!";
+
+    for (int i = 0; i < strings.length; i++) {
+      System.out.print(strings[i]);
+    }
+//      Обратный порядок
+    for (int i = intArray.length - 1; i >=0; i--) {
+        System.out.print(intArray[i] + " ");
+    }
+
+
+
 
 
 
