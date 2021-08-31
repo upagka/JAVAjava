@@ -13,7 +13,7 @@ public class Classwork2 {
 // postWhile(choice);
 // forLoop(choice);
 
-        int a1 = 15;
+        int a1 = 155;
         int a2 = 56;
         int a3 = 625;
         int a4 = -254;
