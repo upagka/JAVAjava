@@ -3,17 +3,17 @@ package Lesson2;
 public class Homework2 {
     static public void main(String[] args) {
 
-//        ex1();
+        ex1();
         System.out.println();
-//        ex2();
+        ex2();
         System.out.println();
-//        ex3();
+        ex3();
         System.out.println();
-//        ex4();
+        ex4();
         System.out.println();
 //        exercise5
-//        int[] bal = {2, 13, 2, 1, 2, 2, 10, 1, 4};
-//        System.out.println(ex5(bal));
+        int[] bal = {2, 13, 2, 1, 2, 2, 10, 1, 4};
+        System.out.println(ex5(bal));
 
     }
 
