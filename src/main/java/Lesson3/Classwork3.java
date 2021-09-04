@@ -47,7 +47,7 @@ public class Classwork3 {
         Random myRan = new Random();
 
 
-        System.out.println(myRan.nextInt(1200));
+        System.out.println(myRan.nextInt(400) - 200);
 
 
 
