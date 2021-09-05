@@ -7,12 +7,52 @@ public class Homework3 {
 
     public static void main(String[] args) {
 
-//        int[][] arr = new int[8][8]; // [строки][столбцы]
-//        ex1(arr);
-//        print2dArray(arr);
+       int[][] arr = new int[8][8]; // [строки][столбцы]
+       ex1(arr);
+       print2dArray(arr);
 
-//        ex2();
+        ex2();
 
+        ex3();
+
+
+    }
+
+    private static void ex3() {
+        String[] words = {"apple", "orange", "lemon", "banana",
+                "apricot", "avocado", "broccoli", "carrot", "cherry",
+                "garlic", "grape", "melon", "leak", "kiwi", "mango",
+                "mushroom", "nut", "olive", "pea", "peanut", "pear",
+                "pepper", "pineapple", "pumpkin", "potato"};
+
+        Scanner myScan = new Scanner(System.in);
+        Random myRan = new Random();
+        boolean done = false;
+        String theWord = new String();
+        String myWord = new String();
+        theWord = words[myRan.nextInt(25)];
+        // System.out.println(theWord);
+        do {
+            System.out.println("Введите слово:");
+            myWord = myScan.next();
+            if (theWord.equals(myWord)) {
+                System.out.println("Вы выиграли! ");
+                done = true;
+            } else {
+                for (int i = 0; i < 15; i++) {
+                    if (i < theWord.length() && i < myWord.length()) {
+                        if (theWord.charAt(i) == myWord.charAt(i)) {
+                            System.out.print(theWord.charAt(i));
+                        } else {
+                            System.out.print("#");
+                        }
+                    } else {
+                        System.out.print("#");
+                    }
+                }
+            }
+            System.out.println();
+        } while (!done);
     }
 
     private static void ex2() {
