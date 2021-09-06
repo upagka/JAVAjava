@@ -53,7 +53,7 @@ public class Classwork3 {
 
 
     }
-    static void print2dArray(int[][] arr){
+    public static void print2dArray(int[][] arr){
        for (int y = 0; y < arr.length; y++){
            for (int x = 0; x < arr[y].length; x++){
                System.out.print(arr[y][x] + "  ");
