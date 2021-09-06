@@ -1,6 +1,6 @@
 package Lesson4;
 
-import Lesson3.Classwork3;
+
 
 import java.util.Random;
 import java.util.Scanner;
@@ -24,11 +24,41 @@ public class TicTacToe {
 
         initField(3, 3);
         printField();
-
-
-
+        humanTurn();
+        printField();
+        aiTurn();
+        printField();
     }
 
+    private static void humanTurn() {
+        int x, y;
+
+    do {
+        System.out.print("Please enter coodinates of ypur turn x & y spit by whitespace >>>>>");
+        x = SCANNER.nextInt() - 1;
+        y = SCANNER.nextInt() - 1;
+    } while (!isCellValid(y, x) || !isCellEmpty(y, x));
+        field[y][x] = DOT_HUMAN;
+    }
+
+    private static void aiTurn() {
+        int x, y;
+
+    do {
+        x = RANDOM.nextInt(fieldSizeX);
+        y = RANDOM.nextInt(fieldSizeY);
+
+        } while (!isCellEmpty(y, x));
+        field[y][x] = DOT_AI;
+    }
+
+
+    private static boolean isCellValid(int y, int x) {
+        return x >= 0 && y >= 0 && x < fieldSizeX && y < fieldSizeY;
+    }
+    private static boolean isCellEmpty(int y, int x) {
+        return field[y][x] == DOT_EMPTY;
+    }
     private static void initField(int sizeX, int sizeY) {
         fieldSizeY = sizeY;
         fieldSizeX = sizeX;
