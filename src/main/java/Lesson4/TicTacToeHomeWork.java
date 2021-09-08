@@ -7,6 +7,7 @@ public class TicTacToeHomeWork {
     private static final char DOT_HUMAN = 'X';
     private static final char DOT_AI = '0';
     private static final char DOT_EMPTY = '.';
+    private static final int QTY_WIN = 4;
     private static final Scanner SCANNER = new Scanner(System.in);
     private static final Random RANDOM = new Random();
 
@@ -38,7 +39,7 @@ public class TicTacToeHomeWork {
 
     private static void playRound() {
         System.out.printf("ROUND %d\n", roundCounter++);
-        initField(3, 3);
+        initField(5, 5);
         printField();
 
         while (true) {
@@ -55,10 +56,10 @@ public class TicTacToeHomeWork {
         if (checkDraw()) return true;
         if (checkWin(dot)) {
             if (dot == DOT_HUMAN) {
-                System.out.println("HUMAN WINS!!!");
+                System.out.println("YOU ARE THE CHAMPION!!!");
                 scoreHuman++;
             } else {
-                System.out.println("AI WINS!!!");
+                System.out.println("YOU LOST!!! DON'T CRY =)");
                 scoreAI++;
             }
             return true;
@@ -135,20 +136,115 @@ public class TicTacToeHomeWork {
     //*** Попробовать сделать универсальную проверку, для произвольной длины последовательности
     // и произвольного размера поля
     private static boolean checkWin(char dot) {
-        //hor
-        if (field[0][0] == dot && field[0][1] == dot && field[0][2] == dot) return true;
-        if (field[1][0] == dot && field[1][1] == dot && field[1][2] == dot) return true;
-        if (field[2][0] == dot && field[2][1] == dot && field[2][2] == dot) return true;
+        int scoreX = 0;
+        int scoreY = 0;
+        int scoreZ = 0;
+        int scoreW = 0;
 
-        //ver
-        if (field[0][0] == dot && field[1][0] == dot && field[2][0] == dot) return true;
-        if (field[0][1] == dot && field[1][1] == dot && field[2][1] == dot) return true;
-        if (field[0][2] == dot && field[1][2] == dot && field[2][2] == dot) return true;
+        for (int y = 0; y < fieldSizeY; y++) {
+            for (int x = 0; x < fieldSizeX; x++) {
+                if(field[y][x] == dot){
+                    scoreX++;
+                    if (scoreX == QTY_WIN){
+                        return true;
+                    }
+                } else {
+                    scoreX = 0;
+                }
+                if(field[x][y] == dot){
+                    scoreY++;
+                    if (scoreY == QTY_WIN){
+                        return true;
+                    }
+                } else {
+                    scoreY = 0;
+                }
+                
+            }
+            scoreX = 0;
+            scoreY = 0;
 
-        //diag
-        if (field[0][0] == dot && field[1][1] == dot && field[2][2] == dot) return true;
-        if (field[0][2] == dot && field[1][1] == dot && field[2][0] == dot) return true;
+        }
+        scoreX = 0;
+        scoreY = 0;
+
+        for (int y = fieldSizeY - QTY_WIN; y >= 0; y--) {
+            for (int i = 0; i < fieldSizeY - y; i++) {
+                if(field[y + i][i] == dot){
+                    scoreY++;
+                    if (scoreY == QTY_WIN){
+                        return true;
+                    }
+                } else {
+                    scoreY = 0;
+                }
+                if(field[i][i + y] == dot){
+                    scoreX++;
+                    if (scoreX == QTY_WIN){
+                        return true;
+                    }
+                } else {
+                    scoreX = 0;
+                }
+                if(field[y + i][fieldSizeY - i - 1] == dot){
+                    scoreZ++;
+                    if (scoreZ == QTY_WIN){
+                        return true;
+                    }
+                } else {
+                    scoreZ = 0;
+                }
+                if(field[i][fieldSizeX - y - i - 1] == dot){
+                    scoreW++;
+                    if (scoreW == QTY_WIN){
+                        return true;
+                    }
+                } else {
+                    scoreW = 0;
+                }
+
+
+
+            }
+            scoreY = 0;
+            scoreX = 0;
+            scoreZ = 0;
+            scoreW = 0;
+
+        }
+
+        
+        
+        
+        
+        
         return false;
+        
+
+
+
+
+
+
+
+
+
+
+
+//        //hor
+//        if (field[0][0] == dot && field[0][1] == dot && field[0][2] == dot) return true;
+//        if (field[1][0] == dot && field[1][1] == dot && field[1][2] == dot) return true;
+//        if (field[2][0] == dot && field[2][1] == dot && field[2][2] == dot) return true;
+//
+//        //ver
+//        if (field[0][0] == dot && field[1][0] == dot && field[2][0] == dot) return true;
+//        if (field[0][1] == dot && field[1][1] == dot && field[2][1] == dot) return true;
+//        if (field[0][2] == dot && field[1][2] == dot && field[2][2] == dot) return true;
+//
+//        //diag
+//        if (field[0][0] == dot && field[1][1] == dot && field[2][2] == dot) return true;
+//        if (field[0][2] == dot && field[1][1] == dot && field[2][0] == dot) return true;
+//        return false;
     }
 
     private static boolean isCellValid(int y, int x) {
@@ -171,9 +267,9 @@ public class TicTacToeHomeWork {
     }
 
     static void printField() {
-        System.out.print("+");
+        System.out.print(" ");
         for (int i = 0; i < fieldSizeX * 2 + 1; i++) {
-            System.out.print(i % 2 == 0 ? "-" : i / 2 + 1);
+            System.out.print(i % 2 == 0 ? "_" : i / 2 + 1);
         }
         System.out.println();
         for (int i = 0; i < fieldSizeY; i++) {
@@ -184,7 +280,7 @@ public class TicTacToeHomeWork {
             System.out.println();
         }
         for (int i = 0; i <= fieldSizeX * 2 + 1; i++) {
-            System.out.print("-");
+            System.out.print("_");
         }
         System.out.println();
 //        for (int y = 0; y < fieldSizeY; y++) {
