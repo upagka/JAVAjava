@@ -17,13 +17,36 @@ public class Classwork5Start {
         cat2.age = 2;
 
 
-    cat1.walk();
-    cat1.voice();
+        Cat cat3 = new Cat("Vaska", "orange", 24);
 
-    cat2.walk();
-    cat2.voice();
+
+        cat1.walk();
+        cat1.voice();
+
+        cat2.walk();
+        cat2.voice();
+
+        cat3.walk();
+        cat3.voice();
+
+
+        Cat[] cats = {
+                new Cat("Marusya", "colorful", 4),
+                new Cat("Matilda", "white",6),
+                new Cat("Comet", "black", 2)
+        };
+
+        System.out.println(cat2);
+
+        for(Cat cat : cats){
+            System.out.println(cat);
+            cat.walk();
+            cat.voice();
+
+        }
 
 
 
     }
+
 }

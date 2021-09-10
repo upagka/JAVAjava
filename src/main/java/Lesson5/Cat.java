@@ -11,8 +11,26 @@ public class Cat {
     String color;
     int age;
 
+    Cat() {
+        System.out.println("Cat was born!");
+
+    }
+
+    Cat(String color) {
+        this();
+        this.color = color;
+    }
+
+    Cat(String name, String color, int age) {
+        this(color);
+        this.name = name;   //this.name - это данные, которые введены в начале класса
+        //this.color = color; //name -  аргумент метода, считываемый аргумент
+        this.age = age;
+    }
+
+
     //метод = действие
-    void  walk() {
+    void walk() {
         System.out.printf("Cat %s walk\n", name);
     }
 
@@ -20,10 +38,12 @@ public class Cat {
         System.out.printf("Cat %s meaw\n", name);
     }
 
+
+    public String toString() {
+        return String.format("Cat %s color: %s age: %d", this.name, this.color, this.age);
     }
 
-
-
+}
 
 
 
