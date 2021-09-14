@@ -3,23 +3,16 @@ package Lesson6.zoo;
 public class Bird extends Animal {
 
     public Bird(String name, String color) {
-        super(name, color);
+        super(name, color, "Bird");
     }
 
+    @Override //Значение, что метод переопределен
     public void voice() {
         System.out.printf("%s bird %s sings\n", this.color, this.name);
     }
 
-    public void walk() {
-        System.out.printf("%s bird %s walks on paws\n", this.color, this.name);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getColor() {
-        return color;
+    public  void fly() {
+        System.out.printf("%s bird %s flies\n", this.color, this.name);
     }
 
     @Override
