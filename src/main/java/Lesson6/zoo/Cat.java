@@ -9,11 +9,17 @@ public class Cat extends Animal {
 
     public Cat(String name, String color) {
         super(name, color, "Cat");
+        countCats++;
     }
 
     @Override
     public void voice() {
         System.out.printf("%s cat %s meaw\n", this.color, this.name);
+    }
+
+    @Override
+    public  void swim(int i){
+        System.out.printf("Cats can't swim!\n");
     }
 
 

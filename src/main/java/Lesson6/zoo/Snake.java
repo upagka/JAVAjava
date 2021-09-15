@@ -23,6 +23,11 @@ public class Snake extends Animal{
         super.walk();
     }
 
+    @Override
+    public  void swim(int i){
+        System.out.printf("Snakes can't swim!\n");
+    }
+
        @Override
     public String toString() {
         return "Dog{" +
