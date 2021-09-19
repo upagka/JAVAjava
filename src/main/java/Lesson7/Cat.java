@@ -6,9 +6,13 @@ public class Cat {
     private Flea[] fleas;
     private boolean satiety = false;
 
+    public Cat(String name) {
+        System.out.println("Cat was born!");
+        this.name = name;
+    }
 
     public Cat(String name, int appetite, int fleaCount) {
-        this.name = name;
+        this(name);
         this.appetite = appetite;
         this.fleas = new Flea[fleaCount];
         for (int i = 0; i < fleas.length; i++) {
