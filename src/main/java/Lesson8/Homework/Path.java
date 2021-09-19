@@ -1,6 +1,6 @@
 package Lesson8.Homework;
 
-public class Path {
+public class Path extends Obstacle {
     private int distance;
 
     public Path(int distance) {

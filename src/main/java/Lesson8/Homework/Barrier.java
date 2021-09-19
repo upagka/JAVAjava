@@ -1,6 +1,6 @@
 package Lesson8.Homework;
 
-public class Barrier {
+public class Barrier extends Obstacle {
     private int height;
 
     public Barrier(int height) {

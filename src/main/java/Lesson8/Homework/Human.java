@@ -12,26 +12,38 @@ public class Human implements Moving {
         this.maxHeight = maxHeight;
     }
 
-    public boolean run(Path path){
-        if (path.getDistance() > this.maxDistance) {
-            System.out.printf("Human %s couldn't run this distance (%d). He tired.\n", this.name, path.getDistance());
-            this.tired = true;
+    public boolean run(Path path) {
+        if (this.tired) {
+            System.out.printf("Human %s is already tired.\n", this.name);
             return false;
         } else {
-            System.out.printf("Human %s have run this distance (%d).\n", this.name, path.getDistance());
-            return true;
+            if (path.getDistance() > this.maxDistance) {
+                System.out.printf("Human %s couldn't run this distance (%d). He tired.\n", this.name, path.getDistance());
+                this.tired = true;
+                return false;
+            } else {
+                System.out.printf("Human %s have run this distance (%d).\n", this.name, path.getDistance());
+                return true;
+            }
+
         }
 
     }
     public boolean jump(Barrier barrier){
-        if (barrier.getHeight() > this.maxHeight) {
-            System.out.printf("Human %s couldn't jump this height (%d). He tired.\n", this.name, barrier.getHeight());
-            this.tired = true;
+        if (this.tired) {
+            System.out.printf("Human %s is already tired.\n", this.name);
             return false;
         } else {
-            System.out.printf("Human %s have jumped this height (%d).\n", this.name, barrier.getHeight());
-            return true;
+            if (barrier.getHeight() > this.maxHeight) {
+                System.out.printf("Human %s couldn't jump this height (%d). He tired.\n", this.name, barrier.getHeight());
+                this.tired = true;
+                return false;
+            } else {
+                System.out.printf("Human %s have jumped this height (%d).\n", this.name, barrier.getHeight());
+                return true;
+            }
         }
+
 
     }
 

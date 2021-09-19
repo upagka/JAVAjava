@@ -12,27 +12,44 @@ public class Cat implements Moving {
         this.maxHeight = maxHeight;
     }
     public boolean run(Path path){
-        if (path.getDistance() > this.maxDistance) {
-            System.out.printf("Cat %s couldn't run this distance (%d). He tired.\n", this.name, path.getDistance());
-            this.tired = true;
+        if (this.tired) {
+            System.out.printf("Cat %s is already tired.\n", this.name);
             return false;
         } else {
-            System.out.printf("Cat %s have run this distance (%d).\n", this.name, path.getDistance());
-            return true;
+            if (path.getDistance() > this.maxDistance) {
+                System.out.printf("Cat %s couldn't run this distance (%d). He tired.\n", this.name, path.getDistance());
+                this.tired = true;
+                return false;
+            } else {
+                System.out.printf("Cat %s have run this distance (%d).\n", this.name, path.getDistance());
+                return true;
+            }
+
         }
 
     }
     public boolean jump(Barrier barrier){
-        if (barrier.getHeight() > this.maxHeight) {
-            System.out.printf("Cat %s couldn't jump this height (%d). He tired.\n", this.name, barrier.getHeight());
-            this.tired = true;
+        if (this.tired) {
+            System.out.printf("Cat %s is already tired.\n", this.name);
             return false;
         } else {
-            System.out.printf("Cat %s have jumped this height (%d).\n", this.name, barrier.getHeight());
-            return true;
+            if (barrier.getHeight() > this.maxHeight) {
+                System.out.printf("Cat %s couldn't jump this height (%d). He tired.\n", this.name, barrier.getHeight());
+                this.tired = true;
+                return false;
+            } else {
+                System.out.printf("Cat %s have jumped this height (%d).\n", this.name, barrier.getHeight());
+                return true;
+            }
         }
 
     }
 
+    public boolean isTired() {
+        return tired;
+    }
 
+    public String getName() {
+        return name;
+    }
 }
