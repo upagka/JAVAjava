@@ -22,6 +22,10 @@ public class Cat extends Animal {
         System.out.printf("Cats can't swim!\n");
     }
 
+//    @Override
+//    public void swim(int distance) {
+//        System.out.println("Cats can't swim.");
+//    }
 
     @Override
     public String toString() {

@@ -15,6 +15,11 @@ public class Snake extends Animal{
     }
 
     @Override
+    public void swim(int distance) {
+        System.out.println("Snakes can't swim");
+    }
+
+    @Override
     public void voice() {
         System.out.printf("%s snake %s Shhhh\n", this.color, this.name);
     }
@@ -23,10 +28,10 @@ public class Snake extends Animal{
         super.walk();
     }
 
-    @Override
-    public  void swim(int i){
-        System.out.printf("Snakes can't swim!\n");
-    }
+//    @Override
+//    public  void swim(int i){
+//        System.out.printf("Snakes can't swim!\n");
+//    }
 
        @Override
     public String toString() {

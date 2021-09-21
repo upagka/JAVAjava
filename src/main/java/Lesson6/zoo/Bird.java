@@ -20,6 +20,11 @@ public class Bird extends Animal {
         System.out.printf("Birds can't swim!\n");
     }
 
+//    @Override
+//    public void swim(int distance) {
+//        System.out.println("Birds can't swim");
+//    }
+
     @Override
     public String toString() {
         return "Bird{" +
