@@ -1,9 +1,9 @@
 package Lesson11.Homework;
 
 public class Apple extends Fruit {
-    private int weight;
+    private float weight;
 
-    public Apple(int weight) {
+    public Apple(float weight) {
         super(weight);
     }
 }
