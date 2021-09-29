@@ -47,19 +47,24 @@ public class Homework11 {
 
         System.out.println("Масса ящика с яблоками:" + box1.getMass());
         System.out.println("Масса ящика с апельсинами:" + box2.getMass());
+        System.out.println("Масса еще одного ящика с яблоками:" + box3.getMass());
+        System.out.println("Сравниваем первый и второй ящик:");
         System.out.println(box1.compare(box2));
+        System.out.println("Сравниваем первый и третий ящик:");
+        System.out.println(box1.compare(box3));
         System.out.println();
 
         System.out.println("Попытка засыпать яблоки в апельсины");
         box1.emptyInto(box2);
-        System.out.println(box1.getMass());
-        System.out.println(box2.getMass());
+        System.out.println("Ящик номер 1: " + box1.getMass());
+        System.out.println("Ящик номер 2: " + box2.getMass());
+        System.out.println("Ящик номер 3: " + box3.getMass());
 
         System.out.println("Сыпем яблоки в яблоки");
         box1.emptyInto(box3);
-        System.out.println(box1.getMass());
-        System.out.println(box2.getMass());
-        System.out.println(box3.getMass());
+        System.out.println("Ящик номер 1: " + box1.getMass());
+        System.out.println("Ящик номер 2: " + box2.getMass());
+        System.out.println("Ящик номер 3: " + box3.getMass());
     }
 
     private static <T> void printArr(T[] array) {
