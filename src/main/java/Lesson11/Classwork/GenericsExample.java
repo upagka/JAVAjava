@@ -1,4 +1,8 @@
-package Lesson11;
+package Lesson11.Classwork;
+
+import Lesson11.Classwork.Box;
+import Lesson11.Classwork.BoxGeneric;
+import Lesson11.Classwork.BoxWithNumbers;
 
 public class GenericsExample {
 
@@ -7,6 +11,18 @@ public class GenericsExample {
 
 //        rawUse();
 
+
+//        geneticBoxExample();
+
+        BoxWithNumbers<Integer> boxWithNumbers = new BoxWithNumbers<>(1, 2, 3, 4, 5, 6);
+        BoxWithNumbers<Integer> boxWithNumbers2 = new BoxWithNumbers<>(1, 2, 3, 4, 5, 6);
+        BoxWithNumbers<Double> boxWithNumbersD = new BoxWithNumbers<>(1.0, 2.0, 3.0, 4.0, 5.0, 6.0);
+        System.out.println(boxWithNumbers.sum());
+        System.out.println(boxWithNumbers.equalsByAvg(boxWithNumbers2));
+        System.out.println(boxWithNumbers.equalsByAvg(boxWithNumbersD));
+    }
+
+    private static void geneticBoxExample() {
         BoxGeneric<Integer> boxInt1 = new BoxGeneric<>(43);
         BoxGeneric<Integer> boxInt2 = new BoxGeneric<>(12);
 
@@ -23,8 +39,6 @@ public class GenericsExample {
         BoxGeneric<String> boxS2 = new BoxGeneric<>("world!");
 
         System.out.println(boxS1.getObj() + boxS2.getObj());
-
-
     }
 
     private static void rawUse() {

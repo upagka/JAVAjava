@@ -1,4 +1,4 @@
-package Lesson11;
+package Lesson11.Classwork;
 
 public class Box {
     private Object obj;
