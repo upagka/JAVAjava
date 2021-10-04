@@ -33,7 +33,7 @@ public class Homework12 {
         Thread myThread1 = new Thread(() -> mathMeth(0, QUATER, arr));
         Thread myThread2 = new Thread(() -> mathMeth(QUATER, 2 * QUATER, arr));
         Thread myThread3 = new Thread(() -> mathMeth(2 * QUATER, 3 * QUATER, arr));
-        Thread myThread4 = new Thread(() -> mathMeth(3*QUATER, arr.length, arr));
+        Thread myThread4 = new Thread(() -> mathMeth(3 * QUATER, arr.length, arr));
 
 
 
