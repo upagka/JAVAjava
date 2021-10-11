@@ -56,7 +56,7 @@ public class Homework12 {
         System.out.println("The result of multithreading: " + (System.currentTimeMillis() - a) + "ms");
     }
 
-    public static void mathMeth(int start, int end, float arr[]){
+    public static void mathMeth(int start, int end, float[] arr){
         for (int i = start; i < end; i++) {
             arr[i] = (float)(arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
         }
